@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "logo_clair.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -12,6 +13,7 @@
           "value" : "dark"
         }
       ],
+      "filename" : "logo_sombre.jpg",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
