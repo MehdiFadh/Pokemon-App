@@ -15,6 +15,10 @@ class DocumentTableViewController: UITableViewController {
         
         // Chargement des dresseurs depuis un fichier JSON lors du chargement initial de la vue
         loadTrainers()
+        
+        loadTrainerss()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(ajouterDresseurTapped))
     }
 
     // MARK: - Table view data source
@@ -78,6 +82,86 @@ class DocumentTableViewController: UITableViewController {
             tableView.reloadData()
         } catch {
             print("Erreur de parsing JSON: \(error)")
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    func getDocumentsDirectory() -> URL {
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    }
+
+    func pathToDresseursFile() -> URL {
+        return getDocumentsDirectory().appendingPathComponent("dresseurs.json")
+    }
+    
+    func copyJsonFileIfNeeded() {
+        let fileManager = FileManager.default
+        let destinationURL = pathToDresseursFile()
+        
+        if !fileManager.fileExists(atPath: destinationURL.path) {
+            if let sourceURL = Bundle.main.url(forResource: "dresseurs", withExtension: "json") {
+                do {
+                    try fileManager.copyItem(at: sourceURL, to: destinationURL)
+                    print("Fichier JSON copié vers Documents")
+                } catch {
+                    print("Erreur copie fichier JSON: \(error)")
+                }
+            }
+        }
+    }
+    
+    func loadTrainerss() {
+        copyJsonFileIfNeeded() // Assure que le fichier est dans Documents
+        
+        let fileURL = pathToDresseursFile()
+        
+        do {
+            let data = try Data(contentsOf: fileURL)
+            listeDresseur = try JSONDecoder().decode([Dresseur].self, from: data)
+            tableView.reloadData()
+        } catch {
+            print("Erreur de parsing JSON: \(error)")
+        }
+    }
+
+    func saveTrainers() {
+        let fileURL = pathToDresseursFile()
+        do {
+            let data = try JSONEncoder().encode(listeDresseur)
+            try data.write(to: fileURL)
+            print("Liste sauvegardée avec succès dans JSON")
+        } catch {
+            print("Erreur sauvegarde JSON: \(error)")
+        }
+    }
+
+
+    
+    
+    
+    
+    
+    
+    
+
+    
+    @objc func ajouterDresseurTapped() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let ajoutVC = storyboard.instantiateViewController(withIdentifier: "AjoutDresseurViewController") as? AjoutDresseurViewController {
+            ajoutVC.onDresseurAjoute = { [weak self] nouveauDresseur in
+                self?.listeDresseur.append(nouveauDresseur)
+                self?.tableView.reloadData()
+            }
+            navigationController?.pushViewController(ajoutVC, animated: true)
         }
     }
 }
