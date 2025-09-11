@@ -1,0 +1,16 @@
+
+[
+  {
+    "name": "Sacha",
+    "region": "Kanto",
+    "photo": "sacha_photo",
+    "badges": [
+      { "name": "Cascade", "image": "cascade_badge" },
+      { "name": "Volcano", "image": "volcano_badge" }
+    ],
+    "pokemons": [
+      { "name": "Pikachu", "image": "pikachu", "type": "Électrique", "description": "Pikachu est un Pokémon de type électrique." },
+      { "name": "Dracaufeu", "image": "charizard", "type": "Feu/Vol", "description": "Dracaufeu est un puissant Pokémon de feu et vol." }
+    ]
+  }
+]
