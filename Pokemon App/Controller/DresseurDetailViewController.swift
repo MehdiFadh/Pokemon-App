@@ -1,6 +1,8 @@
 // // DresseurDetailViewController.swift // Pokemon App // // Created by Mehdi FADHLOUNE on 9/11/25. //
 
 import UIKit
+import QuickLook
+
 
 // Contrôleur de vue qui affiche les détails d'un dresseur, y compris ses badges et ses Pokémon
 class DresseurDetailViewController: UIViewController {
@@ -15,7 +17,8 @@ class DresseurDetailViewController: UIViewController {
     // MARK: - Données
     
     var dresseur: Dresseur!   // Le dresseur à afficher (doit être défini avant l'affichage)
-    
+    var imagePreviewURL: URL?
+
     // MARK: - Cycle de vie
     
     override func viewDidLoad() {
@@ -23,6 +26,11 @@ class DresseurDetailViewController: UIViewController {
         
         // Configure l'interface avec les données du dresseur
         imageView.image = UIImage(named: dresseur.photo)
+        imageView.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleImageTap))
+        imageView.addGestureRecognizer(tapGesture)
+
+        
         nomLabel.text = dresseur.nom
         badgesLabel.text = "Badge(s) : \(dresseur.badges.map { $0.nom }.joined(separator: ", "))"
         
@@ -33,8 +41,42 @@ class DresseurDetailViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
+    
+    @objc func handleImageTap() {
+        guard let image = UIImage(named: dresseur.photo),
+              let data = image.pngData() else {
+            print("Erreur : image non trouvée ou non convertible.")
+            return
+        }
+
+        // Crée un fichier temporaire pour Quick Look
+        let tempDirectory = FileManager.default.temporaryDirectory
+        let imageURL = tempDirectory.appendingPathComponent("preview.png")
+        
+        do {
+            try data.write(to: imageURL)
+            imagePreviewURL = imageURL
+            
+            let previewController = QLPreviewController()
+            previewController.dataSource = self
+            present(previewController, animated: true, completion: nil)
+        } catch {
+            print("Erreur lors de l'écriture du fichier image : \(error)")
+        }
+    }
+
 }
 
+extension DresseurDetailViewController: QLPreviewControllerDataSource {
+    
+    func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
+        return imagePreviewURL != nil ? 1 : 0
+    }
+    
+    func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
+        return imagePreviewURL! as QLPreviewItem
+    }
+}
 
 
 // Extension du contrôleur pour gérer les données et interactions de la tableView
