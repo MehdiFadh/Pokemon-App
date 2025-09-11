@@ -1,16 +1,113 @@
-
 [
   {
-    "name": "Sacha",
+    "nom": "Sacha",
     "region": "Kanto",
-    "photo": "sacha_photo",
+    "photo": "Sacha",
     "badges": [
-      { "name": "Cascade", "image": "cascade_badge" },
-      { "name": "Volcano", "image": "volcano_badge" }
+      { "nom": "Cascade", "image": "cascade_badge" },
+      { "nom": "Volcano", "image": "volcano_badge" }
     ],
     "pokemons": [
-      { "name": "Pikachu", "image": "pikachu", "type": "Électrique", "description": "Pikachu est un Pokémon de type électrique." },
-      { "name": "Dracaufeu", "image": "charizard", "type": "Feu/Vol", "description": "Dracaufeu est un puissant Pokémon de feu et vol." }
+      { "nom": "Pikachu", "image": "Pikachu", "type": "Électrique", "description": "Pikachu est un Pokémon de type électrique." },
+      { "nom": "Dracaufeu", "image": "Dracaufeu", "type": "Feu/Vol", "description": "Dracaufeu est un puissant Pokémon de feu et vol." },
+      { "nom": "Givrali", "image": "Givrali", "type": "Glace", "description": "Givrali est un Pokémon de type glace." },
+      { "nom": "Lucario", "image": "Lucario", "type": "Combat/Acier", "description": "Lucario est un Pokémon combat et acier." }
+    ]
+  },
+  {
+    "nom": "Christy",
+    "region": "Kanto",
+    "photo": "Christy",
+    "badges": [
+      { "nom": "Cascade", "image": "cascade_badge" }
+    ],
+    "pokemons": [
+      { "nom": "Stari", "image": "Stari", "type": "Eau", "description": "Stari est un Pokémon de type eau." },
+      { "nom": "Poissirène", "image": "Poissirène", "type": "Eau", "description": "Poissirène est un Pokémon de type eau." }
+    ]
+  },
+  {
+    "nom": "Matis",
+    "region": "Kanto",
+    "photo": "Matis",
+    "badges": [
+      { "nom": "Roche", "image": "rock_badge" }
+    ],
+    "pokemons": [
+      { "nom": "Onix", "image": "Onix", "type": "Roche/Sol", "description": "Onix est un Pokémon de type roche et sol." },
+      { "nom": "Kabuto", "image": "Kabuto", "type": "Roche/Eau", "description": "Kabuto est un Pokémon fossile." }
+    ]
+  },
+  {
+    "nom": "Meloco",
+    "region": "Johto",
+    "photo": "Meloco",
+    "badges": [
+      { "nom": "Plante", "image": "plante_badge" }
+    ],
+    "pokemons": [
+      { "nom": "Mystherbe", "image": "Mystherbe", "type": "Plante/Poison", "description": "Mystherbe est un Pokémon plante et poison." },
+      { "nom": "Paras", "image": "Paras", "type": "Insecte/Plante", "description": "Paras est un Pokémon insecte et plante." }
+    ]
+  },
+  {
+    "nom": "Pectorius",
+    "region": "Kalos",
+    "photo": "Pectorius",
+    "badges": [
+      { "nom": "Vol", "image": "vol_badge" }
+    ],
+    "pokemons": [
+      { "nom": "Pyrobut", "image": "Pyrobut", "type": "Feu/Psy", "description": "Pyrobut est un Pokémon feu et psy." },
+      { "nom": "Tarsal", "image": "Tarsal", "type": "Psy/Fée", "description": "Tarsal est un Pokémon psy et fée." }
+    ]
+  },
+  {
+    "nom": "Victor",
+    "region": "Sinnoh",
+    "photo": "Victor",
+    "badges": [
+      { "nom": "Élégance", "image": "elegance_badge" }
+    ],
+    "pokemons": [
+      { "nom": "Givrali", "image": "Givrali", "type": "Glace", "description": "Givrali est un Pokémon de type glace." },
+      { "nom": "Lucario", "image": "Lucario", "type": "Combat/Acier", "description": "Lucario est un Pokémon combat et acier." }
+    ]
+  },
+  {
+    "nom": "Dianthéa",
+    "region": "Kalos",
+    "photo": "Dianthéa",
+    "badges": [
+      { "nom": "Combat", "image": "combat_badge" }
+    ],
+    "pokemons": [
+      { "nom": "Machopeur", "image": "Machopeur", "type": "Combat", "description": "Machopeur est un Pokémon de type combat." },
+      { "nom": "Onix", "image": "Onix", "type": "Roche/Sol", "description": "Onix est un Pokémon roche et sol." }
+    ]
+  },
+  {
+    "nom": "Flo",
+    "region": "Kanto",
+    "photo": "Flo",
+    "badges": [
+      { "nom": "Esprit", "image": "spirit_badge" }
+    ],
+    "pokemons": [
+      { "nom": "Alakazam", "image": "Alakazam", "type": "Psy", "description": "Alakazam est un Pokémon psy très puissant." },
+      { "nom": "Kadabra", "image": "Kadabra", "type": "Psy", "description": "Kadabra est un Pokémon psy." }
+    ]
+  },
+  {
+    "nom": "Koga",
+    "region": "Kanto",
+    "photo": "Koga",
+    "badges": [
+      { "nom": "Spectre", "image": "spectre_badge" }
+    ],
+    "pokemons": [
+      { "nom": "Gengar", "image": "Gengar", "type": "Spectre/Poison", "description": "Gengar est un Pokémon spectre et poison." },
+      { "nom": "Arbok", "image": "Arbok", "type": "Poison", "description": "Arbok est un Pokémon poison." }
     ]
   }
 ]

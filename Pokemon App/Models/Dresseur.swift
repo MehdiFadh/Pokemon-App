@@ -1,6 +1,6 @@
 
-struct Trainer: Codable {
-    let name: String
+struct Dresseur: Codable {
+    let nom: String
     let region: String
     let photo: String
     let badges: [Badge]

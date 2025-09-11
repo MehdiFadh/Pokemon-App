@@ -44,16 +44,20 @@ class DocumentTableViewController: UITableViewController {
         let dresseur = listeDresseur.filter { $0.region == region }[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "DocumentCell", for: indexPath)
         cell.textLabel?.text = dresseur.nom
+        cell.detailTextLabel?.text = dresseur.badges.formattedBadge()
         cell.imageView?.image = UIImage(named: dresseur.photo)
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let region = regionForSection(indexPath.section)
-        let trainer = listeDresseur.filter { $0.region == region }[indexPath.row]
-        let detailVC = storyboard?.instantiateViewController(withIdentifier: "DresseurDetailViewController") as! DresseurDetailViewController
-        detailVC.trainer = trainer
-        navigationController?.pushViewController(detailVC, animated: true)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationVC = segue.destination as? DresseurDetailViewController {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let region = regionForSection(indexPath.section)
+                let dresseursInRegion = listeDresseur.filter { $0.region == region }
+                let dresseur = dresseursInRegion[indexPath.row]
+                destinationVC.dresseur = dresseur
+            }
+        }
     }
 
     
@@ -76,5 +80,12 @@ class DocumentTableViewController: UITableViewController {
 extension [Pokemon] {
     func formattedNbPokemon() -> String {
         return "Nombre de pokémon : \(self)"
+    }
+}
+
+extension [Badge] {
+    func formattedBadge() -> String {
+        let badgeNames = self.map { $0.nom }
+        return "Badge(s) : \(badgeNames.joined(separator: ", "))"
     }
 }
