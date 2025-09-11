@@ -8,10 +8,10 @@
       { "nom": "Volcano", "image": "volcano_badge" }
     ],
     "pokemons": [
-      { "nom": "Pikachu", "image": "Pikachu", "type": "Électrique", "description": "Pikachu est un Pokémon de type électrique." },
-      { "nom": "Dracaufeu", "image": "Dracaufeu", "type": "Feu/Vol", "description": "Dracaufeu est un puissant Pokémon de feu et vol." },
-      { "nom": "Givrali", "image": "Givrali", "type": "Glace", "description": "Givrali est un Pokémon de type glace." },
-      { "nom": "Lucario", "image": "Lucario", "type": "Combat/Acier", "description": "Lucario est un Pokémon combat et acier." }
+      { "nom": "Pikachu", "image": "Pikachu", "type": "Électrique", "description": "Pikachu est un Pokémon emblématique de type Électrique. Il stocke l’électricité dans ses joues et la libère en cas de danger, provoquant de puissantes décharges. Très sociable, il tisse rapidement des liens avec son dresseur. Malgré sa petite taille, Pikachu fait preuve d’une grande ténacité au combat et sa vitesse en fait un adversaire redoutable. Il préfère les environnements naturels comme les forêts et adore grignoter des baies. Sa loyauté et sa capacité à s’adapter en font un partenaire de confiance." },
+      { "nom": "Dracaufeu", "image": "Dracaufeu", "type": "Feu/Vol", "description": "Dracaufeu est un puissant Pokémon de type Feu et Vol, connu pour sa silhouette majestueuse et ses ailes déployées. Sa flamme, visible au bout de sa queue, s'intensifie selon son humeur et sa puissance. Dracaufeu ne combat jamais un adversaire plus faible que lui par fierté, et cherche constamment des défis dignes de ses capacités. En vol, il atteint des vitesses impressionnantes et peut cracher des flammes brûlantes capables de faire fondre la roche. Son caractère indépendant en fait un partenaire difficile, mais inestimable lorsqu'un lien de confiance est établi." },
+      { "nom": "Givrali", "image": "Givrali", "type": "Glace", "description": "Givrali est une évolution d'Évoli spécialisée dans les environnements glacés. Ce Pokémon élégant peut contrôler la température autour de lui pour créer des cristaux de glace sur commande. Grâce à son pelage scintillant, il peut se camoufler dans les zones enneigées. Son style de combat repose sur la précision, la vitesse et la glace vive. Givrali est calme, souvent distant, mais développe un attachement profond envers les dresseurs bienveillants. C’est un atout précieux dans les climats froids ou face à des adversaires redoutables." },
+      { "nom": "Lucario", "image": "Lucario", "type": "Combat/Acier", "description": "Lucario est un Pokémon loyal et honorable, capable de ressentir l’aura de toute créature vivante. Cette capacité lui permet de lire les émotions et d’anticiper les mouvements de ses adversaires en combat. De type Combat et Acier, Lucario combine force physique, défense solide et intelligence tactique. Il est souvent représenté comme un gardien, protecteur de son dresseur et de la justice. Son lien spirituel profond avec son environnement le rend unique, et certains le considèrent comme un guide pour les dresseurs expérimentés." }
     ]
   },
   {
@@ -22,8 +22,8 @@
       { "nom": "Cascade", "image": "cascade_badge" }
     ],
     "pokemons": [
-      { "nom": "Stari", "image": "Stari", "type": "Eau", "description": "Stari est un Pokémon de type eau." },
-      { "nom": "Poissirène", "image": "Poissirène", "type": "Eau", "description": "Poissirène est un Pokémon de type eau." }
+      { "nom": "Stari", "image": "Stari", "type": "Eau", "description": "Stari est un Pokémon aquatique mystérieux dont le noyau central émet une lumière brillante. Il est souvent observé à la surface des eaux calmes pendant les nuits étoilées. Bien qu’il ne possède pas de visage au sens classique, Stari est sensible à son environnement et réagit rapidement aux menaces. Il a la capacité de se régénérer lorsqu’il est blessé. Utilisé en combat, il mise sur des attaques rapides et précises, en exploitant son agilité dans l’eau pour déstabiliser ses adversaires." },
+      { "nom": "Poissirène", "image": "Poissirène", "type": "Eau", "description": "Poissirène est un Pokémon gracieux de type Eau, souvent comparé à une carpe élégante. Il nage avec aisance dans les rivières et lacs, effectuant des mouvements fluides et poétiques. Malgré son apparence douce, Poissirène peut utiliser ses cornes acérées pour se défendre efficacement. Il est connu pour sa beauté naturelle et ses capacités à se faufiler à travers les courants rapides. Poissirène est également très territorial et loyal envers son dresseur." }
     ]
   },
   {
@@ -34,8 +34,8 @@
       { "nom": "Roche", "image": "rock_badge" }
     ],
     "pokemons": [
-      { "nom": "Onix", "image": "Onix", "type": "Roche/Sol", "description": "Onix est un Pokémon de type roche et sol." },
-      { "nom": "Kabuto", "image": "Kabuto", "type": "Roche/Eau", "description": "Kabuto est un Pokémon fossile." }
+      { "nom": "Onix", "image": "Onix", "type": "Roche/Sol", "description": "Onix est un Pokémon colossal en forme de serpent rocheux. Il vit principalement sous terre, creusant des tunnels massifs à des vitesses étonnantes. Ses mouvements provoquent souvent des tremblements de terre mineurs. Sa peau est aussi dure que le granit, ce qui le rend extrêmement résistant. Onix est un symbole de puissance brute et de stabilité, mais il reste un Pokémon qui nécessite une grande maîtrise pour être contrôlé efficacement en combat." },
+      { "nom": "Kabuto", "image": "Kabuto", "type": "Roche/Eau", "description": "Kabuto est un Pokémon fossile préhistorique, ramené à la vie grâce à des techniques de résurrection scientifique. Protégé par une carapace rigide, il se déplace en rampant et utilise ses griffes pour attaquer par surprise. On le trouve souvent dans les grottes marines ou les ruines submergées. Bien qu’il soit discret, il est redoutable lorsqu’il est acculé. Son origine ancienne intrigue les chercheurs, qui voient en lui une relique vivante du passé." }
     ]
   },
   {
@@ -46,8 +46,8 @@
       { "nom": "Plante", "image": "plante_badge" }
     ],
     "pokemons": [
-      { "nom": "Mystherbe", "image": "Mystherbe", "type": "Plante/Poison", "description": "Mystherbe est un Pokémon plante et poison." },
-      { "nom": "Paras", "image": "Paras", "type": "Insecte/Plante", "description": "Paras est un Pokémon insecte et plante." }
+      { "nom": "Mystherbe", "image": "Mystherbe", "type": "Plante/Poison", "description": "Mystherbe est un Pokémon nocturne qui aime absorber la lumière lunaire pour grandir. Il est souvent trouvé dans les forêts denses et les endroits humides. Lorsqu'il est menacé, il libère des spores endormantes qui peuvent neutraliser un adversaire sans violence. Bien qu’il semble inoffensif, Mystherbe cache un grand potentiel dans les combats stratégiques. Il évolue souvent lorsqu’il est exposé à des pierres spéciales ou à des environnements particuliers." },
+      { "nom": "Paras", "image": "Paras", "type": "Insecte/Plante", "description": "Paras est un Pokémon étrange, vivant en symbiose avec deux champignons qui poussent sur son dos. Ces champignons contrôlent en partie son comportement et évoluent avec lui. Paras habite les sous-bois sombres où il se nourrit de matière végétale en décomposition. En combat, il utilise des spores paralysantes et des attaques de type Plante redoutables. Son apparence et son comportement fascinent les biologistes Pokémon." }
     ]
   },
   {
@@ -58,8 +58,8 @@
       { "nom": "Vol", "image": "vol_badge" }
     ],
     "pokemons": [
-      { "nom": "Pyrobut", "image": "Pyrobut", "type": "Feu/Psy", "description": "Pyrobut est un Pokémon feu et psy." },
-      { "nom": "Tarsal", "image": "Tarsal", "type": "Psy/Fée", "description": "Tarsal est un Pokémon psy et fée." }
+      { "nom": "Pyrobut", "image": "Pyrobut", "type": "Feu/Psy", "description": "Pyrobut est un Pokémon au tempérament explosif, combinant agilité et puissance psychique. Il est capable d'utiliser ses jambes musclées pour propulser des attaques de feu à une vitesse fulgurante, tout en gardant un esprit tactique grâce à ses capacités mentales. Son énergie est contagieuse, et il est souvent le cœur d’une équipe, menant les autres Pokémon avec détermination. Pyrobut s’entraîne constamment pour perfectionner ses mouvements et impressionner son dresseur. C’est un Pokémon à la fois fougueux et réfléchi, une combinaison rare et précieuse." },
+      { "nom": "Tarsal", "image": "Tarsal", "type": "Psy/Fée", "description": "Tarsal est un petit Pokémon empathique, capable de ressentir les émotions humaines avec une grande précision. Lorsqu’il est exposé à une atmosphère joyeuse, il devient énergique, mais en présence de tensions, il se montre craintif. Il préfère les lieux calmes et paisibles, où il peut méditer ou danser doucement. Tarsal évolue en une forme puissante lorsqu’il se sent en sécurité avec son dresseur. Sa sensibilité fait de lui un partenaire attachant, mais aussi redoutable avec des attaques psychiques précises et poétiques." }
     ]
   },
   {
@@ -70,8 +70,8 @@
       { "nom": "Élégance", "image": "elegance_badge" }
     ],
     "pokemons": [
-      { "nom": "Givrali", "image": "Givrali", "type": "Glace", "description": "Givrali est un Pokémon de type glace." },
-      { "nom": "Lucario", "image": "Lucario", "type": "Combat/Acier", "description": "Lucario est un Pokémon combat et acier." }
+      { "nom": "Givrali", "image": "Givrali", "type": "Glace", "description": "Givrali est une évolution d'Évoli qui maîtrise l’art du givre et du froid. Son corps émet un air glacial capable de congeler instantanément l’humidité autour de lui, créant des paysages hivernaux en quelques secondes. Il est très élégant dans ses mouvements, presque félin, et se déplace sans un bruit. Bien qu’il puisse paraître distant, Givrali tisse des liens profonds avec les dresseurs patients. Il est particulièrement efficace dans les combats stratégiques où le terrain peut être contrôlé." },
+      { "nom": "Lucario", "image": "Lucario", "type": "Combat/Acier", "description": "Lucario est respecté dans de nombreuses régions pour sa maîtrise des arts martiaux et sa connexion à l’aura. Il peut détecter les intentions et les émotions, ce qui lui permet d’anticiper les attaques et de réagir rapidement. Son corps d’acier lui permet de résister à des coups puissants, tandis que ses attaques comme Aurasphère ou Close Combat lui offrent une grande puissance offensive. Loyal et silencieux, Lucario est souvent perçu comme un mentor ou un gardien par les autres Pokémon." }
     ]
   },
   {
@@ -82,8 +82,8 @@
       { "nom": "Combat", "image": "combat_badge" }
     ],
     "pokemons": [
-      { "nom": "Machopeur", "image": "Machopeur", "type": "Combat", "description": "Machopeur est un Pokémon de type combat." },
-      { "nom": "Onix", "image": "Onix", "type": "Roche/Sol", "description": "Onix est un Pokémon roche et sol." }
+      { "nom": "Machopeur", "image": "Machopeur", "type": "Combat", "description": "Machopeur est un Pokémon puissant qui passe le plus clair de son temps à s'entraîner. Son corps musclé est le fruit d'un entraînement rigoureux, et il est capable de soulever plusieurs fois son propre poids. En combat, il utilise des techniques de lutte et de karaté avec une précision redoutable. Il est loyal envers son dresseur et ne recule jamais devant un défi. Malgré son apparence imposante, Machopeur est calme et discipliné, prêt à tout pour protéger les plus faibles." },
+      { "nom": "Onix", "image": "Onix", "type": "Roche/Sol", "description": "Onix, le serpent de pierre, creuse d'immenses galeries sous la terre. Sa peau est faite de roches dures comme le diamant, ce qui lui confère une défense hors norme. Son rugissement résonne dans les tunnels qu’il crée, faisant fuir les intrus. Malgré sa taille, il peut être rapide sous terre et surgir sans prévenir. Il est très territorial et n'hésite pas à se battre pour défendre son domaine. En tant que Pokémon de roche, Onix est un symbole de solidité et de persévérance." }
     ]
   },
   {
@@ -94,8 +94,8 @@
       { "nom": "Esprit", "image": "spirit_badge" }
     ],
     "pokemons": [
-      { "nom": "Alakazam", "image": "Alakazam", "type": "Psy", "description": "Alakazam est un Pokémon psy très puissant." },
-      { "nom": "Kadabra", "image": "Kadabra", "type": "Psy", "description": "Kadabra est un Pokémon psy." }
+      { "nom": "Alakazam", "image": "Alakazam", "type": "Psy", "description": "Alakazam est reconnu pour son intelligence prodigieuse. Il possède un QI supérieur à 5000 et peut mémoriser tout ce qu’il voit. Grâce à ses cuillères tordues, il concentre son énergie psychique pour lancer des attaques comme Choc Mental ou Psyko. Alakazam n’utilise presque jamais sa force physique, préférant déstabiliser ses adversaires par la pensée. C’est un Pokémon très rare et respecté, souvent vu comme un maître sage. Il établit une relation mentale unique avec les dresseurs patients et compatissants." },
+      { "nom": "Kadabra", "image": "Kadabra", "type": "Psy", "description": "Kadabra est un Pokémon qui rayonne d’une énergie mystérieuse. Il tient une cuillère qui amplifie ses pouvoirs psychiques et lui permet de canaliser son énergie. Lorsqu’il apparaît, les appareils électroniques se dérèglent, signe de sa puissance mentale. Kadabra est concentré, toujours en méditation ou en pleine lecture mentale. Il préfère éviter les combats directs, utilisant plutôt des illusions et des attaques mentales pour désorienter ses adversaires. Il évolue en Alakazam lorsqu’un lien fort se forme avec son dresseur." }
     ]
   },
   {
@@ -106,8 +106,8 @@
       { "nom": "Spectre", "image": "spectre_badge" }
     ],
     "pokemons": [
-      { "nom": "Gengar", "image": "Gengar", "type": "Spectre/Poison", "description": "Gengar est un Pokémon spectre et poison." },
-      { "nom": "Arbok", "image": "Arbok", "type": "Poison", "description": "Arbok est un Pokémon poison." }
+      { "nom": "Gengar", "image": "Gengar", "type": "Spectre/Poison", "description": "Gengar est un Pokémon de l’ombre, qui se glisse dans les coins sombres et surprend ses adversaires en surgissant de nulle part. Il adore jouer des tours et se nourrit de la peur des autres. Lorsqu’il rit, un frisson parcourt l’air ambiant. En combat, Gengar utilise sa vitesse et son invisibilité partielle pour frapper en douce. Son sourire sinistre et ses yeux brillants sont devenus emblématiques. C’est un partenaire efficace pour les dresseurs qui aiment les combats stratégiques et imprévisibles." },
+      { "nom": "Arbok", "image": "Arbok", "type": "Poison", "description": "Arbok est un serpent puissant et intimidant, célèbre pour les motifs menaçants sur son ventre qui varient selon la région. Il s’enroule autour de ses ennemis pour les immobiliser avant de les empoisonner avec ses crocs. Il vit dans les jungles et les marécages, préférant chasser la nuit. Son regard perçant suffit souvent à effrayer ses proies. Arbok est un Pokémon très loyal, prêt à tout pour son dresseur, et sa réputation dans les arènes de type Poison n’est plus à faire." }
     ]
   }
 ]
