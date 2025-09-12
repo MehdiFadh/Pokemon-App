@@ -1,0 +1,289 @@
+TP UIKit — Pokémon Trainer Manager
+==================================
+
+Pitch
+-----
+Vous êtes le professeur Chen et vous devez développer une application pour gérer les dresseurs Pokémon, suivre leurs Pokémon, leurs badges et leur progression dans la Ligue.
+
+Fonctionnalités
+---------------
+- Liste des dresseurs (UITableView).
+- Navigation vers fiche dresseur avec :
+    - Nom, photo, nombre de Pokémon, liste des badges obtenus.
+- Tableau des Pokémon possédés (image + type).
+- Délégation → Sélection d’un Pokémon dans la fiche dresseur → ouverture de fiche Pokémon détaillée.
+- Bundle → Données des dresseurs et Pokémon chargées depuis JSON local.
+- Ajout de dresseur via formulaire (nom, photo, Pokémon de départ).
+- QLPreview → Prévisualisation d’un badge ou d’une carte dresseur en HD.
+- Sections → Classer les dresseurs par région (Kanto, Johto, Hoenn…).
+
+Bonus :
+- Système de score ou classement.
+- Filtre par type de Pokémon possédés.
+- Timer pour simuler un combat en cours.
+
+
+Structure du Projet Xcode
+--------------------------
+
+Groupes / Dossiers :
+- Models
+    - Trainer.swift
+    - Pokemon.swift
+    - Badge.swift
+- Views
+    - TrainerTableViewCell.swift
+    - PokemonCollectionViewCell.swift
+- Controllers
+    - TrainerListViewController.swift
+    - TrainerDetailViewController.swift
+    - PokemonDetailViewController.swift
+    - AddTrainerViewController.swift
+- Resources
+    - trainers.json
+    - Assets (images dans Assets.xcassets)
+
+
+MODELS
+------
+
+Trainer.swift
+-------------
+import Foundation
+
+struct Trainer: Codable {
+    let name: String
+    let region: String
+    let photo: String
+    let badges: [Badge]
+    let pokemons: [Pokemon]
+}
+
+
+Pokemon.swift
+-------------
+import Foundation
+
+struct Pokemon: Codable {
+    let name: String
+    let image: String
+    let type: String
+    let description: String
+}
+
+
+Badge.swift
+-----------
+import Foundation
+
+struct Badge: Codable {
+    let name: String
+    let image: String
+}
+
+
+trainers.json
+-------------
+[
+  {
+    "name": "Sacha",
+    "region": "Kanto",
+    "photo": "sacha_photo",
+    "badges": [
+      { "name": "Cascade", "image": "cascade_badge" },
+      { "name": "Volcano", "image": "volcano_badge" }
+    ],
+    "pokemons": [
+      { "name": "Pikachu", "image": "pikachu", "type": "Électrique", "description": "Pikachu est un Pokémon de type électrique." },
+      { "name": "Dracaufeu", "image": "charizard", "type": "Feu/Vol", "description": "Dracaufeu est un puissant Pokémon de feu et vol." }
+    ]
+  }
+]
+
+
+VIEWS
+-----
+
+PokemonCollectionViewCell.swift
+-------------------------------
+import UIKit
+
+class PokemonCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var typeLabel: UILabel!
+
+    func configure(with pokemon: Pokemon) {
+        imageView.image = UIImage(named: pokemon.image)
+        typeLabel.text = pokemon.type
+    }
+}
+
+
+CONTROLLERS
+-----------
+
+TrainerListViewController.swift
+-------------------------------
+import UIKit
+
+class TrainerListViewController: UITableViewController {
+
+    var trainers: [Trainer] = []
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loadTrainers()
+    }
+
+    func loadTrainers() {
+        guard let url = Bundle.main.url(forResource: "trainers", withExtension: "json"),
+              let data = try? Data(contentsOf: url) else { return }
+
+        do {
+            trainers = try JSONDecoder().decode([Trainer].self, from: data)
+            tableView.reloadData()
+        } catch {
+            print("Erreur de parsing JSON: \(error)")
+        }
+    }
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        let regions = Set(trainers.map { $0.region })
+        return regions.count
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let region = regionForSection(section)
+        return trainers.filter { $0.region == region }.count
+    }
+
+    func regionForSection(_ section: Int) -> String {
+        let regions = Array(Set(trainers.map { $0.region })).sorted()
+        return regions[section]
+    }
+
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return regionForSection(section)
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let region = regionForSection(indexPath.section)
+        let trainer = trainers.filter { $0.region == region }[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TrainerCell", for: indexPath)
+        cell.textLabel?.text = trainer.name
+        cell.imageView?.image = UIImage(named: trainer.photo)
+        return cell
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let region = regionForSection(indexPath.section)
+        let trainer = trainers.filter { $0.region == region }[indexPath.row]
+        let detailVC = storyboard?.instantiateViewController(withIdentifier: "TrainerDetailViewController") as! TrainerDetailViewController
+        detailVC.trainer = trainer
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+}
+
+
+TrainerDetailViewController.swift
+---------------------------------
+import UIKit
+
+class TrainerDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var badgesLabel: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
+
+    var trainer: Trainer!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        nameLabel.text = trainer.name
+        photoImageView.image = UIImage(named: trainer.photo)
+        badgesLabel.text = "\(trainer.badges.count) badges"
+        collectionView.dataSource = self
+        collectionView.delegate = self
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return trainer.pokemons.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let pokemon = trainer.pokemons[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PokemonCell", for: indexPath) as! PokemonCollectionViewCell
+        cell.configure(with: pokemon)
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedPokemon = trainer.pokemons[indexPath.row]
+        let detailVC = storyboard?.instantiateViewController(withIdentifier: "PokemonDetailViewController") as! PokemonDetailViewController
+        detailVC.pokemon = selectedPokemon
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+}
+
+
+PokemonDetailViewController.swift
+---------------------------------
+import UIKit
+
+class PokemonDetailViewController: UIViewController {
+
+    var pokemon: Pokemon!
+
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        nameLabel.text = pokemon.name
+        typeLabel.text = pokemon.type
+        imageView.image = UIImage(named: pokemon.image)
+        descriptionLabel.text = pokemon.description
+    }
+}
+
+
+BadgePreviewController.swift (QLPreview)
+----------------------------------------
+import QuickLook
+
+class BadgePreviewController: QLPreviewController, QLPreviewControllerDataSource {
+    var badgeImageName: String!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.dataSource = self
+    }
+
+    func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
+        return 1
+    }
+
+    func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
+        let url = Bundle.main.url(forResource: badgeImageName, withExtension: "png")!
+        return url as QLPreviewItem
+    }
+}
+
+
+Storyboard Setup
+----------------
+- TrainerListViewController → UITableViewController
+- TrainerDetailViewController → UIViewController + UICollectionView
+- PokemonDetailViewController → UIViewController
+- AddTrainerViewController → UIViewController avec formulaire
+
+Ajoutez les Storyboard IDs dans l’inspecteur :
+- TrainerListViewController
+- TrainerDetailViewController
+- PokemonDetailViewController
+- AddTrainerViewController
+
+Fin du document.
