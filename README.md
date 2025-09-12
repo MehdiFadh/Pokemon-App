@@ -28,7 +28,7 @@ Le projet est structuré autour de plusieurs ViewControllers principaux :
 ### `DresseurDetailViewController.swift`
 - Affiche les informations détaillées d’un dresseur
 - Liste ses badges et Pokémon
-- Permet d’afficher l’image du dresseur en plein écran
+- Permet d’afficher l’image du dresseur en plein écran avec un QLPreview
 
 ### `PokemonDetailViewController.swift`
 - Affiche les détails d’un Pokémon sélectionné (image, type, description)
