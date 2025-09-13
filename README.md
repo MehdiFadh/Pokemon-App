@@ -43,7 +43,7 @@ Le projet est structuré autour de plusieurs ViewControllers principaux :
 
 Voici une vidéo de démonstration de ce projet :
 
-[![Vidéo de démonstration](https://youtube.com/shorts/NbY4HyqwyQc?feature=share/0.jpg)](https://youtube.com/shorts/NbY4HyqwyQc?feature=share)
+[![Vidéo de démonstration](https://i9.ytimg.com/vi/NbY4HyqwyQc/mq2.jpg?sqp=COyGlsYG-oaymwEoCMACELQB8quKqQMcGADwAQH4AfIGgAKAD4oCDAgAEAEYciBiKDowDw==&rs=AOn4CLAKO_u13JVJAGAxKqWwy7REdy5eCA)](https://youtube.com/shorts/NbY4HyqwyQc?feature=share)
 
 ---
 
