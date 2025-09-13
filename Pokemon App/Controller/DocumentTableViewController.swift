@@ -54,8 +54,15 @@ class DocumentTableViewController: UITableViewController {
         
         cell.textLabel?.text = dresseur.nom
         cell.detailTextLabel?.text = dresseur.badges.formattedBadge()
-        cell.imageView?.image = UIImage(named: dresseur.photo)
-        
+        let imageURL = getDocumentsDirectory().appendingPathComponent(dresseur.photo)
+
+        if FileManager.default.fileExists(atPath: imageURL.path) {
+            // Si l'image existe dans Documents, on la charge depuis là
+            cell.imageView?.image = UIImage(contentsOfFile: imageURL.path)
+        } else {
+            // Sinon, on charge l'image depuis le bundle (pour les anciens dresseurs)
+            cell.imageView?.image = UIImage(named: dresseur.photo) ?? UIImage(named: "defaultDresseur.png")
+        }
         return cell
     }
     

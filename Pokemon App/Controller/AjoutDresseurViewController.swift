@@ -23,6 +23,9 @@ class AjoutDresseurViewController: UIViewController, UIImagePickerControllerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imageView.layer.cornerRadius = 20 // Pour un cercle parfait, ajustez en fonction de la largeur
+        imageView.layer.masksToBounds = true
 
     }
     
@@ -39,9 +42,11 @@ class AjoutDresseurViewController: UIViewController, UIImagePickerControllerDele
                 imageName = UUID().uuidString + ".png"
                 
                 if let data = image.pngData() {
-                    let path = FileManager.default.temporaryDirectory.appendingPathComponent(imageName!)
-                    try? data.write(to: path)
+                    let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+                    let imageURL = documentsDirectory.appendingPathComponent(imageName!)
+                    try? data.write(to: imageURL)
                 }
+
             }
             picker.dismiss(animated: true)
         }
@@ -80,7 +85,7 @@ class AjoutDresseurViewController: UIViewController, UIImagePickerControllerDele
         let nouveauDresseur = Dresseur(
             nom: nom,
             region: region,
-            photo: "defaultDresseur.png", // Ou une image sélectionnée
+            photo: imageName ?? "defaultDresseur.png",
             badges: badges,
             pokemons: pokemons
         )

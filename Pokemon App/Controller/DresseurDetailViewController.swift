@@ -25,7 +25,16 @@ class DresseurDetailViewController: UIViewController {
         super.viewDidLoad()
         
         // Configure l'interface avec les données du dresseur
-        imageView.image = UIImage(named: dresseur.photo)
+        let imageURL = getDocumentsDirectory().appendingPathComponent(dresseur.photo)
+        if FileManager.default.fileExists(atPath: imageURL.path) {
+            // Si l'image existe dans Documents, on la charge depuis là
+            imageView.image = UIImage(contentsOfFile: imageURL.path)
+        } else {
+            // Sinon, on charge l'image depuis le bundle (pour les dresseurs sans photo personnalisée)
+            imageView.image = UIImage(named: dresseur.photo) ?? UIImage(named: "defaultDresseur.png")
+        }
+
+
         imageView.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleImageTap))
         imageView.addGestureRecognizer(tapGesture)
@@ -42,28 +51,26 @@ class DresseurDetailViewController: UIViewController {
         tableView.delegate = self
     }
     
+    func getDocumentsDirectory() -> URL {
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+    }
+
+    
     @objc func handleImageTap() {
-        guard let image = UIImage(named: dresseur.photo),
-              let data = image.pngData() else {
-            print("Erreur : image non trouvée ou non convertible.")
+        let imageURL = getDocumentsDirectory().appendingPathComponent(dresseur.photo)
+        
+        guard FileManager.default.fileExists(atPath: imageURL.path) else {
+            print("Image non trouvée dans Documents")
             return
         }
 
-        // Crée un fichier temporaire pour Quick Look
-        let tempDirectory = FileManager.default.temporaryDirectory
-        let imageURL = tempDirectory.appendingPathComponent("preview.png")
+        imagePreviewURL = imageURL
         
-        do {
-            try data.write(to: imageURL)
-            imagePreviewURL = imageURL
-            
-            let previewController = QLPreviewController()
-            previewController.dataSource = self
-            present(previewController, animated: true, completion: nil)
-        } catch {
-            print("Erreur lors de l'écriture du fichier image : \(error)")
-        }
+        let previewController = QLPreviewController()
+        previewController.dataSource = self
+        present(previewController, animated: true, completion: nil)
     }
+
 
 }
 
