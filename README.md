@@ -28,7 +28,7 @@ Le projet est structuré autour de plusieurs ViewControllers principaux :
 ### `DresseurDetailViewController.swift`
 - Affiche les informations détaillées d’un dresseur
 - Liste ses badges et Pokémon
-- Permet d’afficher l’image du dresseur en plein écran
+- Permet d’afficher l’image du dresseur en plein écran avec un QLPreview
 
 ### `PokemonDetailViewController.swift`
 - Affiche les détails d’un Pokémon sélectionné (image, type, description)
@@ -36,6 +36,14 @@ Le projet est structuré autour de plusieurs ViewControllers principaux :
 ### `AjoutDresseurViewController.swift`
 - Formulaire d’ajout d’un nouveau dresseur
 - Parsing manuel de l’entrée utilisateur pour créer des objets `Dresseur`, `Badge`, et `Pokemon`
+
+---
+
+## 📀 Vidéo
+
+Voici une vidéo de démonstration de ce projet :
+
+[![Vidéo de démonstration](https://i9.ytimg.com/vi/NbY4HyqwyQc/mq2.jpg?sqp=COyGlsYG-oaymwEoCMACELQB8quKqQMcGADwAQH4AfIGgAKAD4oCDAgAEAEYciBiKDowDw==&rs=AOn4CLAKO_u13JVJAGAxKqWwy7REdy5eCA)](https://youtube.com/shorts/NbY4HyqwyQc?feature=share)
 
 ---
 
@@ -68,3 +76,4 @@ Le fichier JSON (`dresseurs.json`) suit une structure comme celle-ci :
     ]
   }
 ]
+
