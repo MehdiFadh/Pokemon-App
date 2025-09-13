@@ -39,6 +39,14 @@ Le projet est structuré autour de plusieurs ViewControllers principaux :
 
 ---
 
+## 📀 Vidéo
+
+Voici une vidéo de démonstration de ce projet :
+
+[![Vidéo de démonstration](https://youtube.com/shorts/NbY4HyqwyQc?feature=share/0.jpg)](https://youtube.com/shorts/NbY4HyqwyQc?feature=share)
+
+---
+
 ## 🗂️ Modèles
 
 Les entités manipulées incluent :
@@ -68,14 +76,4 @@ Le fichier JSON (`dresseurs.json`) suit une structure comme celle-ci :
     ]
   }
 ]
-
-
-
-
-
-## 📀 Modèles
-
-Voici une vidéo de démonstration de ce projet :
-
-[![Vidéo de démonstration](https://youtube.com/shorts/NbY4HyqwyQc?feature=share/0.jpg)](https://youtube.com/shorts/NbY4HyqwyQc?feature=share)
 
