@@ -59,7 +59,7 @@
         <!--AjoutDresseurViewController-->
         <scene sceneID="gp8-zj-gZd">
             <objects>
-                <viewController storyboardIdentifier="AjoutDresseurViewController" id="6YJ-H0-dFn" userLabel="AjoutDresseurViewController" customClass="AjoutDresseurViewController" customModule="Pokemon_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AjoutDresseurViewController" title="Ajouter un dresseur" id="6YJ-H0-dFn" userLabel="AjoutDresseurViewController" customClass="AjoutDresseurViewController" customModule="Pokemon_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7a3-71-LuL">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -313,7 +313,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

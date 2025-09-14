@@ -57,19 +57,27 @@ class DresseurDetailViewController: UIViewController {
 
     
     @objc func handleImageTap() {
-        let imageURL = getDocumentsDirectory().appendingPathComponent(dresseur.photo)
-        
-        guard FileManager.default.fileExists(atPath: imageURL.path) else {
-            print("Image non trouvée dans Documents")
-            return
-        }
+            guard let image = UIImage(named: dresseur.photo),
+                  let data = image.pngData() else {
+                print("Erreur : image non trouvée ou non convertible.")
+                return
+            }
 
-        imagePreviewURL = imageURL
-        
-        let previewController = QLPreviewController()
-        previewController.dataSource = self
-        present(previewController, animated: true, completion: nil)
-    }
+            // Crée un fichier temporaire pour Quick Look
+            let tempDirectory = FileManager.default.temporaryDirectory
+            let imageURL = tempDirectory.appendingPathComponent("preview.png")
+            
+            do {
+                try data.write(to: imageURL)
+                imagePreviewURL = imageURL
+                
+                let previewController = QLPreviewController()
+                previewController.dataSource = self
+                present(previewController, animated: true, completion: nil)
+            } catch {
+                print("Erreur lors de l'écriture du fichier image : \(error)")
+            }
+        }
 
 
 }
@@ -100,7 +108,7 @@ extension DresseurDetailViewController: UITableViewDataSource, UITableViewDelega
         let pokemon = dresseur.pokemons[indexPath.row]
         
         // Affiche l'image du Pokémon ou une icône par défaut si l'image est absente
-        cell.imageView?.image = UIImage(named: pokemon.image) ?? UIImage(systemName: "bolt.circle")
+        cell.imageView?.image = UIImage(named: pokemon.image) ?? UIImage(systemName: "bolt.square")
         
         // Affiche le nom et le type du Pokémon
         cell.textLabel?.text = "\(pokemon.nom) - \(pokemon.type)"

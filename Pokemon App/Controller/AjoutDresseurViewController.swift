@@ -24,7 +24,7 @@ class AjoutDresseurViewController: UIViewController, UIImagePickerControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageView.layer.cornerRadius = 20 // Pour un cercle parfait, ajustez en fonction de la largeur
+        imageView.layer.cornerRadius = 20
         imageView.layer.masksToBounds = true
 
     }
