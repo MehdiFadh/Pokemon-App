@@ -4,8 +4,8 @@
     "region": "Kanto",
     "photo": "Sacha",
     "badges": [
-      { "nom": "Cascade", "image": "cascade_badge" },
-      { "nom": "Volcano", "image": "volcano_badge" }
+      { "nom": "Cascade", "image": "Cascade" },
+      { "nom": "Volcano", "image": "Volcano" }
     ],
     "pokemons": [
       { "nom": "Pikachu", "image": "Pikachu", "type": "Électrique", "description": "Pikachu est un Pokémon emblématique de type Électrique. Il stocke l’électricité dans ses joues et la libère en cas de danger, provoquant de puissantes décharges. Très sociable, il tisse rapidement des liens avec son dresseur. Malgré sa petite taille, Pikachu fait preuve d’une grande ténacité au combat et sa vitesse en fait un adversaire redoutable. Il préfère les environnements naturels comme les forêts et adore grignoter des baies. Sa loyauté et sa capacité à s’adapter en font un partenaire de confiance." },
@@ -19,7 +19,7 @@
     "region": "Kanto",
     "photo": "Christy",
     "badges": [
-      { "nom": "Cascade", "image": "cascade_badge" }
+      { "nom": "Cascade", "image": "Cascade" }
     ],
     "pokemons": [
       { "nom": "Stari", "image": "Stari", "type": "Eau", "description": "Stari est un Pokémon aquatique mystérieux dont le noyau central émet une lumière brillante. Il est souvent observé à la surface des eaux calmes pendant les nuits étoilées. Bien qu’il ne possède pas de visage au sens classique, Stari est sensible à son environnement et réagit rapidement aux menaces. Il a la capacité de se régénérer lorsqu’il est blessé. Utilisé en combat, il mise sur des attaques rapides et précises, en exploitant son agilité dans l’eau pour déstabiliser ses adversaires." },
@@ -31,7 +31,7 @@
     "region": "Kanto",
     "photo": "Matis",
     "badges": [
-      { "nom": "Roche", "image": "rock_badge" }
+      { "nom": "Roche", "image": "Roche" }
     ],
     "pokemons": [
       { "nom": "Onix", "image": "Onix", "type": "Roche/Sol", "description": "Onix est un Pokémon colossal en forme de serpent rocheux. Il vit principalement sous terre, creusant des tunnels massifs à des vitesses étonnantes. Ses mouvements provoquent souvent des tremblements de terre mineurs. Sa peau est aussi dure que le granit, ce qui le rend extrêmement résistant. Onix est un symbole de puissance brute et de stabilité, mais il reste un Pokémon qui nécessite une grande maîtrise pour être contrôlé efficacement en combat." },
@@ -43,7 +43,7 @@
     "region": "Johto",
     "photo": "Meloco",
     "badges": [
-      { "nom": "Plante", "image": "plante_badge" }
+      { "nom": "Plante", "image": "Plante" }
     ],
     "pokemons": [
       { "nom": "Mystherbe", "image": "Mystherbe", "type": "Plante/Poison", "description": "Mystherbe est un Pokémon nocturne qui aime absorber la lumière lunaire pour grandir. Il est souvent trouvé dans les forêts denses et les endroits humides. Lorsqu'il est menacé, il libère des spores endormantes qui peuvent neutraliser un adversaire sans violence. Bien qu’il semble inoffensif, Mystherbe cache un grand potentiel dans les combats stratégiques. Il évolue souvent lorsqu’il est exposé à des pierres spéciales ou à des environnements particuliers." },
@@ -55,7 +55,7 @@
     "region": "Kalos",
     "photo": "Pectorius",
     "badges": [
-      { "nom": "Vol", "image": "vol_badge" }
+      { "nom": "Vol", "image": "Vol" }
     ],
     "pokemons": [
       { "nom": "Pyrobut", "image": "Pyrobut", "type": "Feu/Psy", "description": "Pyrobut est un Pokémon au tempérament explosif, combinant agilité et puissance psychique. Il est capable d'utiliser ses jambes musclées pour propulser des attaques de feu à une vitesse fulgurante, tout en gardant un esprit tactique grâce à ses capacités mentales. Son énergie est contagieuse, et il est souvent le cœur d’une équipe, menant les autres Pokémon avec détermination. Pyrobut s’entraîne constamment pour perfectionner ses mouvements et impressionner son dresseur. C’est un Pokémon à la fois fougueux et réfléchi, une combinaison rare et précieuse." },
@@ -67,7 +67,7 @@
     "region": "Sinnoh",
     "photo": "Victor",
     "badges": [
-      { "nom": "Élégance", "image": "elegance_badge" }
+      { "nom": "Élégance", "image": "Élégance" }
     ],
     "pokemons": [
       { "nom": "Givrali", "image": "Givrali", "type": "Glace", "description": "Givrali est une évolution d'Évoli qui maîtrise l’art du givre et du froid. Son corps émet un air glacial capable de congeler instantanément l’humidité autour de lui, créant des paysages hivernaux en quelques secondes. Il est très élégant dans ses mouvements, presque félin, et se déplace sans un bruit. Bien qu’il puisse paraître distant, Givrali tisse des liens profonds avec les dresseurs patients. Il est particulièrement efficace dans les combats stratégiques où le terrain peut être contrôlé." },
@@ -79,7 +79,7 @@
     "region": "Kalos",
     "photo": "Dianthéa",
     "badges": [
-      { "nom": "Combat", "image": "combat_badge" }
+      { "nom": "Combat", "image": "Combat" }
     ],
     "pokemons": [
       { "nom": "Machopeur", "image": "Machopeur", "type": "Combat", "description": "Machopeur est un Pokémon puissant qui passe le plus clair de son temps à s'entraîner. Son corps musclé est le fruit d'un entraînement rigoureux, et il est capable de soulever plusieurs fois son propre poids. En combat, il utilise des techniques de lutte et de karaté avec une précision redoutable. Il est loyal envers son dresseur et ne recule jamais devant un défi. Malgré son apparence imposante, Machopeur est calme et discipliné, prêt à tout pour protéger les plus faibles." },
@@ -91,7 +91,7 @@
     "region": "Kanto",
     "photo": "Flo",
     "badges": [
-      { "nom": "Esprit", "image": "spirit_badge" }
+      { "nom": "Esprit", "image": "Esprit" }
     ],
     "pokemons": [
       { "nom": "Alakazam", "image": "Alakazam", "type": "Psy", "description": "Alakazam est reconnu pour son intelligence prodigieuse. Il possède un QI supérieur à 5000 et peut mémoriser tout ce qu’il voit. Grâce à ses cuillères tordues, il concentre son énergie psychique pour lancer des attaques comme Choc Mental ou Psyko. Alakazam n’utilise presque jamais sa force physique, préférant déstabiliser ses adversaires par la pensée. C’est un Pokémon très rare et respecté, souvent vu comme un maître sage. Il établit une relation mentale unique avec les dresseurs patients et compatissants." },
@@ -103,7 +103,7 @@
     "region": "Kanto",
     "photo": "Koga",
     "badges": [
-      { "nom": "Spectre", "image": "spectre_badge" }
+      { "nom": "Spectre", "image": "Spectre" }
     ],
     "pokemons": [
       { "nom": "Gengar", "image": "Gengar", "type": "Spectre/Poison", "description": "Gengar est un Pokémon de l’ombre, qui se glisse dans les coins sombres et surprend ses adversaires en surgissant de nulle part. Il adore jouer des tours et se nourrit de la peur des autres. Lorsqu’il rit, un frisson parcourt l’air ambiant. En combat, Gengar utilise sa vitesse et son invisibilité partielle pour frapper en douce. Son sourire sinistre et ses yeux brillants sont devenus emblématiques. C’est un partenaire efficace pour les dresseurs qui aiment les combats stratégiques et imprévisibles." },

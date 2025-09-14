@@ -63,21 +63,38 @@ class AjoutDresseurViewController: UIViewController, UIImagePickerControllerDele
 
         // Conversion des badges (ex: "Feu,Eau" → [Badge(nom: "Feu"), Badge(nom: "Eau")])
         let badges: [Badge] = badgesString.split(separator: ",").map {
-            Badge(nom: String($0).trimmingCharacters(in: .whitespaces), image: "defaultBadge.png")
+            Badge(nom: String($0).trimmingCharacters(in: .whitespaces), image: "\(nom).png")
         }
 
-        // Conversion des pokémons (ex: "Pikachu-Electrik-Pikachu.png-Description" ...)
+        // Conversion des pokémons (ex: "Pikachu : Electrik / Petit souris; Dracaufeu : Feu / Grand lézard")
         let pokemons: [Pokemon] = pokemonsString.split(separator: ";").compactMap { entry in
-            let parts = entry.split(separator: "-")
-            guard parts.count == 4 else {
+            let trimmedEntry = entry.trimmingCharacters(in: .whitespaces)
+            guard !trimmedEntry.isEmpty else { return nil }
+
+            // Découper par ":"
+            let parts = trimmedEntry.split(separator: ":", maxSplits: 1).map { $0.trimmingCharacters(in: .whitespaces) }
+            guard parts.count == 2 else {
                 print("❌ Mauvais format de pokémon : \(entry)")
                 return nil
             }
+
+            let nomPokemon = parts[0]
+
+            // Dans la partie droite, séparer Type / Description
+            let typeDesc = parts[1].split(separator: "/", maxSplits: 1).map { $0.trimmingCharacters(in: .whitespaces) }
+            guard typeDesc.count == 2 else {
+                print("❌ Mauvais format type/description : \(parts[1])")
+                return nil
+            }
+
+            let type = typeDesc[0]
+            let description = typeDesc[1]
+
             return Pokemon(
-                nom: String(parts[0]),
-                image: String(parts[2]),
-                type: String(parts[1]),
-                description: String(parts[3])
+                nom: nomPokemon,
+                image: "\(nomPokemon).png", // génère automatiquement le nom de l’image
+                type: type,
+                description: description
             )
         }
 
@@ -99,6 +116,7 @@ class AjoutDresseurViewController: UIViewController, UIImagePickerControllerDele
         // Retour à la vue précédente
         navigationController?.popViewController(animated: true)
     }
+
     
     func sauvegarderDresseur(_ dresseur: Dresseur) {
         guard let url = Bundle.main.url(forResource: "dresseurs", withExtension: "json") else {
