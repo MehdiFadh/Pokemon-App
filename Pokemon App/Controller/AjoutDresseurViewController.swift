@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AjoutDresseurViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AjoutDresseurViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     
     @IBOutlet weak var imageView: UIImageView!
@@ -26,7 +26,11 @@ class AjoutDresseurViewController: UIViewController, UIImagePickerControllerDele
         
         imageView.layer.cornerRadius = 20
         imageView.layer.masksToBounds = true
-
+        nomTextField.delegate = self
+        pokemonsTextField.delegate = self
+        badgesTextField.delegate = self
+        regionTextField.delegate = self
+        
     }
     
     @IBAction func choisirImageTapped(_ sender: UIButton) {
@@ -50,6 +54,12 @@ class AjoutDresseurViewController: UIViewController, UIImagePickerControllerDele
             }
             picker.dismiss(animated: true)
         }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder() // Ferme le clavier
+        return true
+    }
+
     
     @IBAction func ajouterTapped(_ sender: UIButton) {
         // Vérification que tous les champs sont remplis
