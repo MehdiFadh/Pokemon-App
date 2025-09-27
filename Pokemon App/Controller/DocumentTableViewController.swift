@@ -94,14 +94,6 @@ class DocumentTableViewController: UITableViewController {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
     func getDocumentsDirectory() -> URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     }
@@ -150,15 +142,6 @@ class DocumentTableViewController: UITableViewController {
             print("Erreur sauvegarde JSON: \(error)")
         }
     }
-
-
-    
-    
-    
-    
-    
-    
-    
 
     
     @objc func ajouterDresseurTapped() {
