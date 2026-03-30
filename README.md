@@ -39,11 +39,15 @@ Le projet est structuré autour de plusieurs ViewControllers principaux :
 
 ---
 
-## 📀 Vidéo
+## 🖼️ Captures d'écran
 
-Voici une vidéo de démonstration de ce projet :
+Voici quelques captures d'écran de l'application :
 
-[![Vidéo de démonstration](https://i9.ytimg.com/vi/NbY4HyqwyQc/mq2.jpg?sqp=COyGlsYG-oaymwEoCMACELQB8quKqQMcGADwAQH4AfIGgAKAD4oCDAgAEAEYciBiKDowDw==&rs=AOn4CLAKO_u13JVJAGAxKqWwy7REdy5eCA)](https://youtube.com/shorts/NbY4HyqwyQc?feature=share)
+<p align="center">
+  <img src="Pokemon%20App/Resources/Assets/Capture%20d’écran%202026-03-17%20à%2021.21.35.png" width="30%" />
+  <img src="Pokemon%20App/Resources/Assets/Capture%20d’écran%202026-03-17%20à%2021.21.45.png" width="30%" />
+  <img src="Pokemon%20App/Resources/Assets/Capture%20d’écran%202026-03-17%20à%2021.21.52.png" width="30%" />
+</p>
 
 ---
 
